@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitor de Texto Responsivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1 - BARRA SUPERIOR: Categorias Fixas -->
+  <div class="galeria-topo" id="galeriaCategorias">
+    <label class="categoria-item" id="label-frutas">
+      <input type="file" webkitdirectory directory multiple class="input-pasta-escondido" onchange="carregarArquivosDaPasta(event, 'frutas')">
+      <img src="imagens/frutas.jpg" alt="Frutas" onerror="this.src='https://placehold.co'">
+      <span>Frutas</span>
+    </label>
+
+    <label class="categoria-item" id="label-legumes">
+      <input type="file" webkitdirectory directory multiple class="input-pasta-escondido" onchange="carregarArquivosDaPasta(event, 'legumes')">
+      <img src="imagens/legumes.jpg" alt="Legumes" onerror="this.src='https://placehold.co'">
+      <span>Legumes</span>
+    </label>
+
+    <label class="categoria-item" id="label-comidas">
+      <input type="file" webkitdirectory directory multiple class="input-pasta-escondido" onchange="carregarArquivosDaPasta(event, 'comidas')">
+      <img src="imagens/comidas.jpg" alt="Comidas" onerror="this.src='https://placehold.co'">
+      <span>Comidas</span>
+    </label>
+  </div>
+
+  <!-- ÁREA CENTRAL: Painel de Controle e Visualização -->
+  <div class="area-central">
+
+    <!-- Substitua a div .container atual por esta -->
+    <div class="container">
+        <h2>Leitor de Texto</h2>
+        
+        <!-- Novo grupo para alinhar o input e o botão de limpar lado a lado -->
+        <div class="input-grupo">
+            <input type="text" id="texto" placeholder="Digite ou clique em uma imagem...">
+            <button id="btnLimpar" title="Limpar texto">&times;</button>
+        </div>
+        
+        <div class="opcoes-grupo">
+            <label class="opcao-item">
+            <input type="checkbox" id="chkIncluirNome" checked>
+            <span>Incluir nome</span>
+            </label>
+            <label class="opcao-item">
+            <input type="checkbox" id="chkFalarNome">
+            <span>Falar nome automaticamente</span>
+            </label>
+        </div>
+
+        <button id="btnFalar">Ouvir Áudio</button>
+    </div>
+
+    <div class="visualizador" id="visualizador">
+      <span>Nenhuma imagem selecionada</span>
+    </div>
+  </div>
+
+  <!-- 2 - BARRA INFERIOR: Exibe os itens de dentro da pasta aberta -->
+  <div class="galeria-rodape" id="galeriaItens">
+    <span class="aviso-galeria">Clique em uma categoria acima para abrir a respectiva pasta...</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
